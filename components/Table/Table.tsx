@@ -7,7 +7,6 @@ import styles from './PaginatedTable.module.css';
 import { deleteItem, addItem, editItem } from '../service/ApiService';
 import Search from '../Search/Search';
 import fakeApiData from '../Table/hearings.json';
-import { DateTimePicker } from '@mantine/dates';
 
 
 function PaginatedTableWithSearch() {
