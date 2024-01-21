@@ -33,7 +33,7 @@ function PaginatedTableWithSearch() {
     const handlePageChange = (newPageNumber: number) => {
         setPageNumber(newPageNumber);
     };
-    
+
 
     // Lógica de pesquisa
     const handleSearch = (term: string) => {
@@ -44,25 +44,25 @@ function PaginatedTableWithSearch() {
         setFilteredData(filtered);
         setPageNumber(1);
     };
-    
+
 
     const handleDelete = (index: number) => {
         const isConfirmed = window.confirm('Tem certeza de que deseja excluir este item?');
-    
+
         if (isConfirmed) {
             deleteItem(index);
             setFilteredData(fakeApiData);
             setPageNumber(1);
         }
     };
-    
+
 
     const handleEdit = (index: number) => {
         setSelectedItem(fakeApiData[index]);
         setEditedItem(fakeApiData[index]);
         setIsEditing(true);
     };
-    
+
     const handleAdd = () => {
         setSelectedItem(null);
         setEditedItem({
@@ -123,7 +123,7 @@ function PaginatedTableWithSearch() {
             </Title>
 
             <div className={styles.searchBarContainer}>
-                <Search onSearch={handleSearch} className={styles.searchBar} />
+                <Search onSearch={handleSearch} />
                 <Button onClick={handleAdd} size="sm" className={styles.addButton}>
                     Adicionar
                 </Button>

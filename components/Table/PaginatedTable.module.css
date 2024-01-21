@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly; 
+    justify-content: space-evenly;
     height: 100vh;
 }
 
@@ -12,7 +12,7 @@
     font-weight: 900;
     letter-spacing: rem(-2px);
     margin-bottom: 20px;
-    
+
     @media (max-width: 768px) {
         font-size: rem(50px);
     }
@@ -43,21 +43,21 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: auto; 
+    width: 80%; /* Alterado para 80% para manter consistência com o restante da aplicação */
     margin-bottom: 20px;
 }
 
 .searchBar {
-    flex: auto; 
-    margin-right: auto; 
+    flex: 1; /* Alterado para 1 para ocupar todo o espaço disponível */
+    margin-right: 10px; /* Ajustado o espaçamento para 10px */
 }
 
 .addButton {
-    margin-left: 10px; 
+    margin-left: 10px;
 }
 
 .actionButton {
-    margin-right: 5px; 
+    margin-right: 5px;
 }
 
 .gridColumn {
@@ -70,13 +70,12 @@
 }
 
 .addButton:hover, .editButton:hover, .actionButton:hover {
-    background-color: #4CAF50; 
-    color: white; 
+    background-color: #4CAF50;
+    color: white;
 }
 
-
 .modal {
-    animation: fadeIn 0.5s ease; 
+    animation: fadeIn 0.5s ease;
 }
 
 @keyframes fadeIn {
@@ -89,10 +88,10 @@
 }
 
 .searchInput {
-    width: 200px; 
+    width: 200px;
     transition: width 0.3s ease;
 }
 
 .searchInput:focus {
-    width: 300px; 
+    width: 300px;
 }
