@@ -30,12 +30,13 @@ function PaginatedTableWithSearch() {
 
     const pageCount = Math.ceil(filteredData.length / itemsPerPage);
 
-    const handlePageChange = (newPageNumber) => {
+    const handlePageChange = (newPageNumber: number) => {
         setPageNumber(newPageNumber);
     };
+    
 
     // Lógica de pesquisa
-    const handleSearch = (term) => {
+    const handleSearch = (term: string) => {
         const searchTerm = term.toLowerCase();
         const filtered = fakeApiData.filter((item) =>
             Object.values(item).some((value) => value.toLowerCase().includes(searchTerm))
@@ -43,23 +44,25 @@ function PaginatedTableWithSearch() {
         setFilteredData(filtered);
         setPageNumber(1);
     };
+    
 
-    const handleDelete = (index) => {
+    const handleDelete = (index: number) => {
         const isConfirmed = window.confirm('Tem certeza de que deseja excluir este item?');
-
+    
         if (isConfirmed) {
             deleteItem(index);
             setFilteredData(fakeApiData);
             setPageNumber(1);
         }
     };
+    
 
-    const handleEdit = (index) => {
+    const handleEdit = (index: number) => {
         setSelectedItem(fakeApiData[index]);
         setEditedItem(fakeApiData[index]);
         setIsEditing(true);
     };
-
+    
     const handleAdd = () => {
         setSelectedItem(null);
         setEditedItem({
@@ -71,7 +74,7 @@ function PaginatedTableWithSearch() {
         setIsAdding(true);
     };
 
-    const isValidDateFormat = (dateString) => {
+    const isValidDateFormat = (dateString: string) => {
         const regex = /^\d{4}-\d{2}-\d{2}$/;
         return regex.test(dateString);
     };
@@ -89,7 +92,7 @@ function PaginatedTableWithSearch() {
         }
 
         if (isEditing && selectedItem !== null) {
-            const index = fakeApiData.indexOf(selectedItem);
+            const index = fakeApiData.indexOf(selectedItem as any);
             editItem(index, editedItem);
         } else {
             addItem(editedItem);
