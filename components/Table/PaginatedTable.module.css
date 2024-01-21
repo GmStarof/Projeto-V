@@ -1,0 +1,98 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly; 
+    height: 100vh;
+}
+
+.title {
+    color: light-dark(var(--mantine-color-black), var(--mantine-color-white));
+    font-size: rem(100px);
+    font-weight: 900;
+    letter-spacing: rem(-2px);
+    margin-bottom: 20px;
+    
+    @media (max-width: 768px) {
+        font-size: rem(50px);
+    }
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.tableContainer {
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.table {
+    width: 100%;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.searchBarContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: auto; 
+    margin-bottom: 20px;
+}
+
+.searchBar {
+    flex: auto; 
+    margin-right: auto; 
+}
+
+.addButton {
+    margin-left: 10px; 
+}
+
+.actionButton {
+    margin-right: 5px; 
+}
+
+.gridColumn {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.addButton, .editButton, .actionButton {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.addButton:hover, .editButton:hover, .actionButton:hover {
+    background-color: #4CAF50; 
+    color: white; 
+}
+
+
+.modal {
+    animation: fadeIn 0.5s ease; 
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.searchInput {
+    width: 200px; 
+    transition: width 0.3s ease;
+}
+
+.searchInput:focus {
+    width: 300px; 
+}
